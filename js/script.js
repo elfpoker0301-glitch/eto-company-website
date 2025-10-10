@@ -1,3 +1,22 @@
+// オープニングアニメーション
+window.addEventListener('DOMContentLoaded', () => {
+    // スクロールを無効化
+    document.body.classList.add('no-scroll');
+    
+    const openingAnimation = document.getElementById('openingAnimation');
+    
+    // 3.3秒後にアニメーションを削除してスクロールを有効化
+    setTimeout(() => {
+        document.body.classList.remove('no-scroll');
+        // アニメーション終了後に要素を削除（パフォーマンス向上）
+        setTimeout(() => {
+            if (openingAnimation) {
+                openingAnimation.remove();
+            }
+        }, 800);
+    }, 3300);
+});
+
 // メニュートグル機能
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.querySelector('.nav');
