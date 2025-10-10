@@ -74,6 +74,16 @@ img {
     align-items: center;
 }
 
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: opacity 0.3s ease;
+}
+
+.logo-image:hover {
+    opacity: 0.8;
+}
+
 .logo h1 {
     font-family: 'Noto Serif JP', serif;
     font-size: 1.5rem;
