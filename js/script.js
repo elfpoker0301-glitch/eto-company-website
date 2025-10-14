@@ -210,6 +210,15 @@ class LanguageSwitcher {
             }
         });
 
+        // 外部リンクのURL更新
+        const externalLinks = document.querySelectorAll('.external-link[data-ja-url][data-en-url]');
+        externalLinks.forEach(link => {
+            const url = lang === 'ja' ? link.dataset.jaUrl : link.dataset.enUrl;
+            if (url) {
+                link.href = url;
+            }
+        });
+
         // ページタイトルの更新
         const titles = {
             ja: '株式会社エトウ | 人と環境にやさしい住環境を提案します',
@@ -608,4 +617,5 @@ class HeroBackgroundSlider {
 document.addEventListener('DOMContentLoaded', () => {
     new ServicesSlider();
     new HeroBackgroundSlider();
+    new LanguageSwitcher();
 });
