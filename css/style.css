@@ -350,26 +350,46 @@ img {
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    padding-top: 20px;
 }
 
 .section-title {
     font-family: 'Noto Serif JP', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 900;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
 }
 
 .section-title-ja {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: var(--text-light);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
 
 .section-lead {
@@ -760,6 +780,15 @@ img {
     right: 50%;
     margin-left: -50vw !important;
     margin-right: -50vw !important;
+}
+
+.business-section .section-title {
+    color: var(--primary-color);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.business-section .section-title::before {
+    background: linear-gradient(90deg, var(--primary-color), rgba(255, 255, 255, 0.3));
 }
 
 .business-grid {
@@ -1336,6 +1365,21 @@ img {
         font-size: 0.8rem;
     }
     
+    /* Section Title Tablet */
+    .section-title {
+        font-size: 3rem;
+        margin-bottom: 25px;
+    }
+    
+    .section-title::before {
+        width: 50px;
+        height: 3px;
+    }
+    
+    .section-header {
+        margin-bottom: 60px;
+    }
+    
     .business-content p {
         font-size: 0.85rem;
         margin-bottom: 15px;
@@ -1657,7 +1701,23 @@ img {
     }
 
     .section-title {
-        font-size: 1.6rem;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .section-title::before {
+        width: 40px;
+        height: 3px;
+        top: -15px;
+    }
+    
+    .section-title-ja {
+        font-size: 1rem;
+    }
+    
+    .section-header {
+        margin-bottom: 50px;
+        padding-top: 15px;
     }
 
     .company-table {
