@@ -765,6 +765,7 @@ img {
 .business-grid {
     display: grid;
     grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
     gap: 0;
     width: 100%;
     max-width: none;
@@ -774,11 +775,13 @@ img {
     position: relative;
     border-radius: 0;
     overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
-    min-height: 300px;
+    min-height: 400px;
+    display: block;
+    margin-bottom: 2px;
 }
 
 .business-card:last-child {
