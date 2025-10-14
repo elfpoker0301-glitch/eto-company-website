@@ -479,20 +479,21 @@ img {
     text-align: center;
 }
 
+/* Featured section images */
 .service-img-1 {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('../images/services/products-catalog.jpg');
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7)), url('../images/featured/featured-100th.jpg');
 }
 
 .service-img-2 {
-    background: linear-gradient(135deg, rgba(240, 147, 251, 0.8), rgba(245, 87, 108, 0.8)), url('../images/services/oem-manufacturing.jpg');
+    background: linear-gradient(135deg, rgba(34, 139, 34, 0.7), rgba(107, 142, 35, 0.7)), url('../images/featured/featured-hinoki.jpg');
 }
 
 .service-img-3 {
-    background: linear-gradient(135deg, rgba(79, 172, 254, 0.8), rgba(0, 242, 254, 0.8)), url('../images/services/global-business.jpg');
+    background: linear-gradient(135deg, rgba(101, 67, 33, 0.7), rgba(139, 90, 43, 0.7)), url('../images/featured/featured-hinoki-furniture.jpg');
 }
 
 .service-img-4 {
-    background: linear-gradient(135deg, rgba(67, 233, 123, 0.8), rgba(56, 249, 215, 0.8)), url('../images/services/custom-furniture.jpg');
+    background: linear-gradient(135deg, rgba(70, 130, 180, 0.7), rgba(100, 149, 237, 0.7)), url('../images/featured/featured-experience.jpg');
 }
 
 .slide-content {
