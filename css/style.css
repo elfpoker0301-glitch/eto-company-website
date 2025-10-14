@@ -2034,31 +2034,41 @@ img {
         padding: 12px 0;
     }
 
-    /* Services slider compact */
+    /* Services slider mobile optimization */
     .services-slider {
         margin: 0 15px;
     }
 
     .slide {
-        padding: 40px 25px;
-        gap: 30px;
-        min-height: 500px;
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+        min-height: auto;
+        text-align: center;
     }
 
-    .slide-image .image-placeholder {
-        height: 250px;
-        min-height: 220px;
-    }
+    .slide-image {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
     }
 
     .slide-image .image-placeholder {
         height: 180px;
-        aspect-ratio: 3/2;
+        max-height: 180px;
+        min-height: 180px;
+        aspect-ratio: 16/9;
         border-radius: 15px;
     }
 
     .slide-image .image-placeholder span {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .slide-content {
+        flex: none;
+        width: 100%;
     }
 
     .slide-content h3 {
@@ -2069,10 +2079,76 @@ img {
     .slide-content p {
         font-size: 0.85rem;
         line-height: 1.5;
+        margin-bottom: 20px;
     }
 
     .slide-btn {
         padding: 8px 16px;
         font-size: 0.8rem;
         border-radius: 6px;
+        display: inline-block;
     }
+}
+
+/* 小画面モバイル用の追加スタイル */
+@media (max-width: 375px) {
+    .services-slider {
+        margin: 0 10px;
+    }
+
+    .slide {
+        flex-direction: column;
+        padding: 25px 15px;
+        gap: 20px;
+        min-height: initial;
+        text-align: center;
+    }
+
+    .slide-image {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .slide-image .image-placeholder {
+        height: 160px;
+        max-height: 160px;
+        min-height: 160px;
+        aspect-ratio: 16/9;
+        border-radius: 12px;
+    }
+
+    .slide-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .slide-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .slide-content p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .slide-btn {
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        display: inline-block;
+    }
+
+    /* スライダーコントロールの改善 */
+    .slider-dots {
+        margin-top: 20px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+    }
+}
