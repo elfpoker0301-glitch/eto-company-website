@@ -1012,8 +1012,8 @@ img {
    Philosophy Section
    =================================== */
 .philosophy-section {
-    background: linear-gradient(135deg, #2c5f2d 0%, #4a7c59 100%);
-    color: white;
+    background: #f8f9fa;
+    color: var(--text-color);
     position: relative;
     overflow: hidden;
 }
@@ -1024,13 +1024,16 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background: url('../images/logo.png') no-repeat center center;
     background-size: contain;
-    opacity: 0.1;
+    opacity: 0.8;
     z-index: 0;
     pointer-events: none;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 .philosophy-section .container {
@@ -1039,11 +1042,11 @@ img {
 }
 
 .philosophy-section .section-title {
-    color: white;
+    color: var(--primary-color);
 }
 
 .philosophy-section .section-title-ja {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-light);
 }
 
 .philosophy-content {
@@ -1058,11 +1061,11 @@ img {
     display: flex;
     align-items: center;
     gap: 30px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     padding: 30px;
     border-radius: 10px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .philosophy-number {
