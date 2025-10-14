@@ -431,78 +431,64 @@ img {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 4rem;
-    color: white;
-    font-weight: 700;
+    justify-content: flex-end;
+    align-items: flex-start;
     position: relative;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding: 30px;
+    box-sizing: border-box;
+    /* 背景色をフォールバック用に設定 */
+    background-color: #f0f0f0;
 }
 
+/* オーバーレイを完全に削除 */
 .slide-image .image-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
-    z-index: 1;
+    display: none;
 }
 
-/* 実際の画像を使用する場合の背景 */
-.slide-image .image-placeholder.has-image::before {
-    background: none !important;
-}
 
-.slide-image .image-placeholder.has-image {
+
+/* 美しいタイトルスタイル */
+.slide-image .image-placeholder .featured-title {
+    font-size: 2.2rem;
+    font-weight: 800;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-.slide-image .image-placeholder span {
-    font-size: 5rem;
-    margin-bottom: 10px;
-    position: relative;
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.9),
+        1px 1px 2px rgba(0,0,0,0.8);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     z-index: 2;
-}
-
-.slide-image .image-placeholder p {
-    font-size: 1.1rem;
-    font-weight: 600;
     position: relative;
-    z-index: 2;
-    text-align: center;
 }
 
-/* Featured section images */
+
+/* Featured section images - クリーンな表示 */
 .slide-image .image-placeholder.service-img-1 {
-    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7)), url('../images/featured/featured-100th.png') !important;
+    background: url('../images/featured/featured-100th.png') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
 .slide-image .image-placeholder.service-img-2 {
-    background: linear-gradient(135deg, rgba(34, 139, 34, 0.7), rgba(107, 142, 35, 0.7)), url('../images/featured/featured-hinoki.jpg') !important;
+    background: url('../images/featured/featured-hinoki.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
 .slide-image .image-placeholder.service-img-3 {
-    background: linear-gradient(135deg, rgba(101, 67, 33, 0.7), rgba(139, 90, 43, 0.7)), url('../images/featured/featured-hinoki-furniture.jpg') !important;
+    background: url('../images/featured/featured-hinoki-furniture.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
 .slide-image .image-placeholder.service-img-4 {
-    background: linear-gradient(135deg, rgba(70, 130, 180, 0.7), rgba(100, 149, 237, 0.7)), url('../images/featured/featured-experience.jpg') !important;
+    background: url('../images/featured/featured-experience.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -1107,7 +1093,11 @@ img {
 
     .slide-image .image-placeholder {
         height: 240px;
-        font-size: 3.5rem;
+        padding: 25px;
+    }
+    
+    .slide-image .image-placeholder .featured-title {
+        font-size: 1.8rem;
     }
 
     .slide-content {
@@ -1320,10 +1310,14 @@ img {
         width: 100%;
         height: 220px;
         aspect-ratio: 16/9;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
     }
 
-    .slide-image .image-placeholder span {
-        font-size: 3rem;
+    .slide-image .image-placeholder .featured-title {
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     .slide-content {
@@ -1386,10 +1380,11 @@ img {
     .slide-image .image-placeholder {
         width: 100%;
         height: 200px;
+        padding: 15px;
     }
 
-    .slide-image .image-placeholder span {
-        font-size: 3rem;
+    .slide-image .image-placeholder .featured-title {
+        font-size: 1.3rem;
     }
 
     .slide-content h3 {
