@@ -756,29 +756,41 @@ img {
 
 .business-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 .business-card {
     position: relative;
-    border-radius: 15px;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
+    height: 300px;
+}
+
+.business-card:last-child {
+    border-right: none;
 }
 
 .business-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scaleY(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 }
 
 .business-image {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -846,7 +858,7 @@ img {
 
 .business-btn {
     display: inline-block;
-    background: var(--primary-color);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     padding: 12px 24px;
     border-radius: 25px;
@@ -854,15 +866,17 @@ img {
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(44, 95, 45, 0.4);
-    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 .business-btn:hover {
-    background: transparent;
-    border-color: white;
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
     color: white;
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
 }
 
@@ -1211,11 +1225,26 @@ img {
     /* Business Section Tablet */
     .business-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+        gap: 0;
     }
 
-    .business-image {
-        height: 220px;
+    .business-card {
+        height: 250px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .business-card:nth-child(2n) {
+        border-right: none;
+    }
+    
+    .business-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .business-content p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
     }
 
     .business-overlay {
@@ -1393,15 +1422,18 @@ img {
 
     .business-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 0;
     }
 
     .business-card {
-        margin: 0 10px;
+        margin: 0;
+        height: 250px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .business-image {
-        height: 200px;
+    .business-card:last-child {
+        border-bottom: none;
     }
 
     .business-overlay {
@@ -1413,13 +1445,15 @@ img {
     }
 
     .business-content p {
-        font-size: 0.85rem;
-        margin-bottom: 15px;
+        font-size: 0.9rem;
+        margin-bottom: 18px;
     }
 
     .business-btn {
-        padding: 10px 20px;
-        font-size: 0.85rem;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.25);
+        border: 2px solid rgba(255, 255, 255, 0.4);
     }
 
     .strength-item {
@@ -1623,6 +1657,39 @@ img {
     .section-lead {
         font-size: 0.9rem;
         text-align: center;
+    }
+
+    /* Business Section Small Screens */
+    .business-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .business-card {
+        height: 220px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .business-card:last-child {
+        border-bottom: none;
+    }
+
+    .business-overlay {
+        padding: 20px;
+    }
+
+    .business-content h3 {
+        font-size: 1rem;
+    }
+
+    .business-content p {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+
+    .business-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
     }
 
     /* Hero background improvements */
