@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理画面 - お知らせ管理 | 株式会社エトウ</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="admin-header">
+        <div class="admin-header-container">
+            <h1>エトウ管理画面</h1>
+            <nav class="admin-nav">
+                <a href="index.html" class="btn btn-outline">サイトを見る</a>
+                <button class="logout-btn">ログアウト</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="admin-main">
+        <div class="admin-container">
+            <!-- タイトル -->
+            <div class="page-header">
+                <h2>お知らせ管理</h2>
+                <button class="btn btn-primary" id="addNewsBtn">新規追加</button>
+            </div>
+
+            <!-- 統計情報 -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総お知らせ数</h3>
+                    <p class="stat-number" id="totalNews">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>今月の投稿</h3>
+                    <p class="stat-number" id="monthlyNews">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>最終更新</h3>
+                    <p class="stat-text" id="lastUpdate">-</p>
+                </div>
+            </div>
+
+            <!-- お知らせ一覧 -->
+            <div class="news-management">
+                <div class="section-header">
+                    <h3>お知らせ一覧</h3>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="お知らせを検索...">
+                    </div>
+                </div>
+
+                <div class="news-table-container">
+                    <table class="news-table">
+                        <thead>
+                            <tr>
+                                <th>日付</th>
+                                <th>タイトル（日本語）</th>
+                                <th>タイトル（英語）</th>
+                                <th>ステータス</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newsTableBody">
+                            <!-- JavaScriptで動的に生成 -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <p>お知らせがありません</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('addNewsBtn').click()">
+                        最初のお知らせを追加
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- モーダル: お知らせ追加・編集 -->
+    <div class="modal" id="newsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">お知らせを追加</h3>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <form id="newsForm">
+                <div class="form-group">
+                    <label for="newsDate">日付 *</label>
+                    <input type="date" id="newsDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="newsTitleJa">タイトル（日本語） *</label>
+                    <input type="text" id="newsTitleJa" placeholder="お知らせのタイトルを入力" required>
+                </div>
+                <div class="form-group">
+                    <label for="newsTitleEn">タイトル（英語） *</label>
+                    <input type="text" id="newsTitleEn" placeholder="Enter news title in English" required>
+                </div>
+                <div class="form-group">
+                    <label for="newsStatus">ステータス</label>
+                    <select id="newsStatus">
+                        <option value="published">公開</option>
+                        <option value="draft">下書き</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancelBtn">キャンセル</button>
+                    <button type="submit" class="btn btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- モーダル: 削除確認 -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>削除確認</h3>
+                <button class="close-btn" onclick="closeDeleteModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>このお知らせを削除してもよろしいですか？</p>
+                <p class="delete-warning">この操作は取り消せません。</p>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" onclick="closeDeleteModal()">キャンセル</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">削除する</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知 -->
+    <div class="notification" id="notification">
+        <span id="notificationMessage"></span>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

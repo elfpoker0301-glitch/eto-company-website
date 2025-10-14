@@ -25,18 +25,22 @@
                     <img src="images/logo.png" alt="株式会社エトウ" class="logo-image">
                 </a>
             </div>
-            <nav class="nav">
+                        <nav class="nav" id="nav">
                 <ul class="nav-list">
-                    <li><a href="#top">トップ</a></li>
-                    <li><a href="#about">エトウについて</a></li>
-                    <li><a href="#business">事業内容</a></li>
-                    <li><a href="#strength">私たちの強み</a></li>
-                    <li><a href="#company">会社情報</a></li>
-                    <li><a href="#news">ニュース</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="#top" data-ja="ホーム" data-en="Home">ホーム</a></li>
+                    <li><a href="products/" data-ja="製品情報" data-en="Products">製品情報</a></li>
+                    <li><a href="oem/" data-ja="OEM・ODM" data-en="OEM・ODM">OEM・ODM</a></li>
+                    <li><a href="company/" data-ja="会社情報" data-en="Company">会社情報</a></li>
+                    <li><a href="#news" data-ja="ニュース" data-en="News">ニュース</a></li>
+                    <li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" id="menuToggle">
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="ja">JP</button>
+                <span class="lang-separator">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -46,13 +50,101 @@
 
     <!-- メインビジュアル -->
     <section id="top" class="hero">
+        <!-- Hero background images will be dynamically inserted here -->
         <div class="hero-content">
-            <h2 class="hero-title">伝統とは、革新し続けること。</h2>
-            <p class="hero-subtitle">創業100年を迎え、世界を見据えた挑戦へ。</p>
-            <p class="hero-description">人と環境にやさしい住環境を提案します。</p>
+            <h2 class="hero-title" data-ja="伝統とは、革新し続けること。" data-en="Tradition means continuous innovation.">伝統とは、革新し続けること。</h2>
+            <p class="hero-subtitle" data-ja="創業100年を迎え、世界を見据えた挑戦へ。" data-en="Celebrating 100 years, embarking on global challenges.">創業100年を迎え、世界を見据えた挑戦へ。</p>
+            <p class="hero-description" data-ja="人と環境にやさしい住環境を提案します。" data-en="We propose living environments friendly to people and the environment.">人と環境にやさしい住環境を提案します。</p>
         </div>
         <div class="hero-scroll">
             <span>SCROLL</span>
+        </div>
+    </section>
+
+    <!-- Services Slider Section -->
+    <section class="section services-slider-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services<span class="section-title-ja" data-ja="サービス一覧" data-en="Our Services">サービス一覧</span></h2>
+                <p class="section-lead" data-ja="エトウが提供する様々なサービスをご紹介します" data-en="Discover the various services ETO provides">エトウが提供する様々なサービスをご紹介します</p>
+            </div>
+            
+            <div class="services-slider">
+                <div class="slider-container">
+                    <div class="slides-wrapper" id="slidesWrapper">
+                        
+                        <!-- Slide 1: 製品カタログ -->
+                        <div class="slide active">
+                            <div class="slide-image">
+                                <div class="image-placeholder service-img-1 has-image">
+                                    <span>🪑</span>
+                                    <p data-ja="製品カタログ" data-en="Product Catalog">製品カタログ</p>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3 data-ja="製品カタログ" data-en="Product Catalog">製品カタログ</h3>
+                                <p data-ja="エトウの豊富な家具製品をご覧いただけます。伝統的な技術と現代的なデザインが融合した製品をご紹介。" data-en="Browse ETO's extensive furniture collection. Discover products that blend traditional craftsmanship with modern design.">エトウの豊富な家具製品をご覧いただけます。伝統的な技術と現代的なデザインが融合した製品をご紹介。</p>
+                                <a href="products/" class="slide-btn" data-ja="製品を見る" data-en="View Products">製品を見る</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: OEM・ODM -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <div class="image-placeholder service-img-2 has-image">
+                                    <span>🏭</span>
+                                    <p data-ja="OEM・ODM" data-en="OEM・ODM">OEM・ODM</p>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3 data-ja="OEM・ODM サービス" data-en="OEM・ODM Services">OEM・ODM サービス</h3>
+                                <p data-ja="お客様のブランドに合わせた家具の企画・製造を承ります。100年の経験と技術でご要望にお応えします。" data-en="We provide custom furniture planning and manufacturing for your brand. Our 100 years of experience and expertise meet your requirements.">お客様のブランドに合わせた家具の企画・製造を承ります。100年の経験と技術でご要望にお応えします。</p>
+                                <a href="oem/" class="slide-btn" data-ja="詳細を見る" data-en="Learn More">詳細を見る</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: 海外展開 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <div class="image-placeholder service-img-3 has-image">
+                                    <span>🌏</span>
+                                    <p data-ja="グローバル展開" data-en="Global Business">グローバル展開</p>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3 data-ja="グローバル展開" data-en="Global Business">グローバル展開</h3>
+                                <p data-ja="ベトナム、中国、マレーシアに拠点を持ち、世界市場へ日本の木工技術を発信しています。" data-en="With bases in Vietnam, China, and Malaysia, we promote Japanese woodworking technology to the global market.">ベトナム、中国、マレーシアに拠点を持ち、世界市場へ日本の木工技術を発信しています。</p>
+                                <a href="global/" class="slide-btn" data-ja="拠点情報" data-en="Our Locations">拠点情報</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: カスタム家具 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <div class="image-placeholder service-img-4 has-image">
+                                    <span>✨</span>
+                                    <p data-ja="特注家具" data-en="Custom Furniture">特注家具</p>
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3 data-ja="特注家具サービス" data-en="Custom Furniture Service">特注家具サービス</h3>
+                                <p data-ja="お客様のご要望に合わせたオーダーメイド家具を製作いたします。空間に合わせた最適なデザインをご提案。" data-en="We create custom-made furniture according to your requirements. We propose optimal designs tailored to your space.">お客様のご要望に合わせたオーダーメイド家具を製作いたします。空間に合わせた最適なデザインをご提案。</p>
+                                <a href="custom/" class="slide-btn" data-ja="相談する" data-en="Consult Now">相談する</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ナビゲーション -->
+                <div class="slider-nav">
+                    <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                    <div class="dots-container" id="dotsContainer">
+                        <!-- JavaScriptで動的に生成 -->
+                    </div>
+                    <button class="nav-btn next-btn" id="nextBtn">›</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -60,18 +152,22 @@
     <section id="about" class="section about-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About ETO<span class="section-title-ja">エトウについて</span></h2>
-                <p class="section-lead">約480年前から栄える家具のまち、福岡県大川市で<br>1920年（大正9年）に製材業として創業。</p>
+                <h2 class="section-title">About ETO<span class="section-title-ja" data-ja="エトウについて" data-en="About ETO">エトウについて</span></h2>
+                <p class="section-lead" data-ja="約480年前から栄える家具のまち、福岡県大川市で<br>1920年（大正9年）に製材業として創業。" data-en="Founded as a lumber business in 1920 in Okawa City, Fukuoka,<br>a furniture town that has flourished for about 480 years.">約480年前から栄える家具のまち、福岡県大川市で<br>1920年（大正9年）に製材業として創業。</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>木材、伝統、そして革新</h3>
-                    <p>九州地方最大の河川である筑後川の下流にあたる大川市は、上流の木材産地である大分県日田市から、筏に組まれた木材が筑後川を下り大川の港まで運ばれていました。</p>
-                    <p>木材、物資、船、そして船大工が集まるまちとなった大川。エトウはこの地で創業から100年以上にわたり、製材業から家具製造・輸入・輸出へと事業を拡大し、常に変化と革新に挑戦し続けてきました。</p>
-                    <p>現在では、ベトナム、中国、マレーシアに海外拠点を持ち、世界に誇る日本の木工技術を世界へ発信しています。</p>
+                    <h3 data-ja="木材、伝統、そして革新" data-en="Wood, Tradition, and Innovation">木材、伝統、そして革新</h3>
+                    <p data-ja="九州地方最大の河川である筑後川の下流にあたる大川市は、上流の木材産地である大分県日田市から、筏に組まれた木材が筑後川を下り大川の港まで運ばれていました。" data-en="Okawa City, located downstream of the Chikugo River, Kyushu's largest river, received lumber rafted down from Hita City in Oita Prefecture, an upstream lumber production area.">九州地方最大の河川である筑後川の下流にあたる大川市は、上流の木材産地である大分県日田市から、筏に組まれた木材が筑後川を下り大川の港まで運ばれていました。</p>
+                    <p data-ja="木材、物資、船、そして船大工が集まるまちとなった大川。エトウはこの地で創業から100年以上にわたり、製材業から家具製造・輸入・輸出へと事業を拡大し、常に変化と革新に挑戦し続けてきました。" data-en="Okawa became a town where lumber, materials, ships, and shipbuilders gathered. ETO has been expanding its business from lumber to furniture manufacturing, import, and export for over 100 years since its founding in this location, continuously challenging change and innovation.">木材、物資、船、そして船大工が集まるまちとなった大川。エトウはこの地で創業から100年以上にわたり、製材業から家具製造・輸入・輸出へと事業を拡大し、常に変化と革新に挑戦し続けてきました。</p>
+                    <p data-ja="現在では、ベトナム、中国、マレーシアに海外拠点を持ち、世界に誇る日本の木工技術を世界へ発信しています。" data-en="Today, we have overseas bases in Vietnam, China, and Malaysia, promoting Japan's world-class woodworking technology globally.">現在では、ベトナム、中国、マレーシアに海外拠点を持ち、世界に誇る日本の木工技術を世界へ発信しています。</p>
+                    
+                    <div class="about-cta">
+                        <a href="company/" class="btn-primary about-btn" data-ja="会社概要を見る" data-en="Learn More About Us">会社概要を見る</a>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <div class="image-placeholder">
+                    <div class="image-placeholder company-image">
                         <p>会社イメージ写真</p>
                     </div>
                 </div>
@@ -83,28 +179,28 @@
     <section id="business" class="section business-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Business<span class="section-title-ja">事業内容</span></h2>
+                <h2 class="section-title">Business<span class="section-title-ja" data-ja="事業内容" data-en="Business">事業内容</span></h2>
             </div>
             <div class="business-grid">
                 <div class="business-card">
                     <div class="business-icon">🪵</div>
-                    <h3>製材事業</h3>
-                    <p>創業以来の事業である製材業。長年培った木材の目利き力と加工技術で、高品質な木材を提供します。</p>
+                    <h3 data-ja="製材事業" data-en="Lumber Business">製材事業</h3>
+                    <p data-ja="創業以来の事業である製材業。長年培った木材の目利き力と加工技術で、高品質な木材を提供します。" data-en="Our lumber business since founding. We provide high-quality wood with our long-cultivated wood selection skills and processing technology.">創業以来の事業である製材業。長年培った木材の目利き力と加工技術で、高品質な木材を提供します。</p>
                 </div>
                 <div class="business-card">
                     <div class="business-icon">🪑</div>
-                    <h3>家具製造事業</h3>
-                    <p>1987年より家具製造業に進出。大川の伝統技術と最新のデザインを融合した家具を製造しています。</p>
+                    <h3 data-ja="家具製造事業" data-en="Furniture Manufacturing">家具製造事業</h3>
+                    <p data-ja="1987年より家具製造業に進出。大川の伝統技術と最新のデザインを融合した家具を製造しています。" data-en="Entered furniture manufacturing in 1987. We manufacture furniture combining Okawa's traditional techniques with the latest designs.">1987年より家具製造業に進出。大川の伝統技術と最新のデザインを融合した家具を製造しています。</p>
                 </div>
                 <div class="business-card">
                     <div class="business-icon">🌏</div>
-                    <h3>輸入・輸出事業</h3>
-                    <p>アジア、アメリカへの国産家具の輸出、海外製品の輸入など、グローバルな事業を展開しています。</p>
+                    <h3 data-ja="輸入・輸出事業" data-en="Import & Export">輸入・輸出事業</h3>
+                    <p data-ja="アジア、アメリカへの国産家具の輸出、海外製品の輸入など、グローバルな事業を展開しています。" data-en="We develop global business including exporting domestic furniture to Asia and America, and importing overseas products.">アジア、アメリカへの国産家具の輸出、海外製品の輸入など、グローバルな事業を展開しています。</p>
                 </div>
                 <div class="business-card">
                     <div class="business-icon">🏢</div>
-                    <h3>インテリア事業</h3>
-                    <p>特注家具やインテリアコーディネートなど、お客様のニーズに合わせた空間づくりをサポートします。</p>
+                    <h3 data-ja="インテリア事業" data-en="Interior Business">インテリア事業</h3>
+                    <p data-ja="特注家具やインテリアコーディネートなど、お客様のニーズに合わせた空間づくりをサポートします。" data-en="We support space creation tailored to customer needs, including custom furniture and interior coordination.">特注家具やインテリアコーディネートなど、お客様のニーズに合わせた空間づくりをサポートします。</p>
                 </div>
             </div>
         </div>
@@ -114,103 +210,31 @@
     <section id="strength" class="section strength-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Strength<span class="section-title-ja">エトウが選ばれる理由</span></h2>
-                <p class="section-lead">100年以上の伝統と、革新への挑戦。</p>
+                <h2 class="section-title">Our Strength<span class="section-title-ja" data-ja="エトウが選ばれる理由" data-en="Our Strength">エトウが選ばれる理由</span></h2>
+                <p class="section-lead" data-ja="100年以上の伝統と、革新への挑戦。" data-en="Over 100 years of tradition and the challenge of innovation.">100年以上の伝統と、革新への挑戦。</p>
             </div>
             <div class="strength-list">
                 <div class="strength-item">
                     <div class="strength-number">01</div>
                     <div class="strength-content">
-                        <h3>創業100年の実績と信頼</h3>
-                        <p>1920年の創業以来、木材と家具に携わり続けてきた実績。長年培った技術と信頼が、私たちの強みです。</p>
+                        <h3 data-ja="創業100年の実績と信頼" data-en="100 Years of Achievement and Trust">創業100年の実績と信頼</h3>
+                        <p data-ja="1920年の創業以来、木材と家具に携わり続けてきた実績。長年培った技術と信頼が、私たちの強みです。" data-en="Since our founding in 1920, we have continued to work with wood and furniture. Our strength lies in the technology and trust we have cultivated over many years.">1920年の創業以来、木材と家具に携わり続けてきた実績。長年培った技術と信頼が、私たちの強みです。</p>
                     </div>
                 </div>
                 <div class="strength-item">
                     <div class="strength-number">02</div>
                     <div class="strength-content">
-                        <h3>グローバルネットワーク</h3>
-                        <p>ベトナム、中国、マレーシアに海外拠点を展開。世界を見据えた事業展開で、グローバルなニーズに対応します。</p>
+                        <h3 data-ja="グローバルネットワーク" data-en="Global Network">グローバルネットワーク</h3>
+                        <p data-ja="ベトナム、中国、マレーシアに海外拠点を展開。世界を見据えた事業展開で、グローバルなニーズに対応します。" data-en="We have expanded overseas bases in Vietnam, China, and Malaysia. With global business development, we respond to worldwide needs.">ベトナム、中国、マレーシアに海外拠点を展開。世界を見据えた事業展開で、グローバルなニーズに対応します。</p>
                     </div>
                 </div>
                 <div class="strength-item">
                     <div class="strength-number">03</div>
                     <div class="strength-content">
-                        <h3>革新と創造への姿勢</h3>
-                        <p>「伝統とは革新し続けること」。常に変化に対応し、新しい挑戦を続けることが、私たちの基本姿勢です。</p>
+                        <h3 data-ja="革新と創造への姿勢" data-en="Attitude toward Innovation and Creation">革新と創造への姿勢</h3>
+                        <p data-ja="「伝統とは革新し続けること」。常に変化に対応し、新しい挑戦を続けることが、私たちの基本姿勢です。" data-en="'Tradition means continuous innovation.' Constantly adapting to change and continuing new challenges is our fundamental attitude.">"伝統とは革新し続けること"。常に変化に対応し、新しい挑戦を続けることが、私たちの基本姿勢です。</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section class="section philosophy-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Philosophy<span class="section-title-ja">経営理念</span></h2>
-            </div>
-            <div class="philosophy-content">
-                <div class="philosophy-item">
-                    <div class="philosophy-number">1</div>
-                    <p>会社は、共通の目標を持つ人間の集団である</p>
-                </div>
-                <div class="philosophy-item">
-                    <div class="philosophy-number">2</div>
-                    <p>社員は、会社の利益を分かち合う権利を持つ</p>
-                </div>
-                <div class="philosophy-item">
-                    <div class="philosophy-number">3</div>
-                    <p>たゆまぬ革新と創造は会社と社員の基本姿勢である</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Info Section -->
-    <section id="company" class="section company-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Company<span class="section-title-ja">会社概要</span></h2>
-            </div>
-            <div class="company-info">
-                <table class="company-table">
-                    <tr>
-                        <th>社名</th>
-                        <td>株式会社 エトウ</td>
-                    </tr>
-                    <tr>
-                        <th>代表取締役</th>
-                        <td>山﨑 彩</td>
-                    </tr>
-                    <tr>
-                        <th>創業</th>
-                        <td>大正9年 4月（1920年）</td>
-                    </tr>
-                    <tr>
-                        <th>資本金</th>
-                        <td>5,139万円</td>
-                    </tr>
-                    <tr>
-                        <th>グループ年商</th>
-                        <td>73億8000万円（2023年5月期）</td>
-                    </tr>
-                    <tr>
-                        <th>所在地</th>
-                        <td>〒831-0008 福岡県大川市大字鐘ヶ江 227-2</td>
-                    </tr>
-                    <tr>
-                        <th>TEL / FAX</th>
-                        <td>TEL : 0944-87-5888 / FAX : 0944-87-1018</td>
-                    </tr>
-                    <tr>
-                        <th>海外拠点</th>
-                        <td>
-                            ベトナム（ホーチミン）<br>
-                            中国（深セン）<br>
-                            マレーシア（クアランプール）
-                        </td>
-                    </tr>
-                </table>
             </div>
         </div>
     </section>
@@ -219,20 +243,20 @@
     <section id="news" class="section news-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">News<span class="section-title-ja">ニュース</span></h2>
+                <h2 class="section-title">News<span class="section-title-ja" data-ja="ニュース" data-en="News">ニュース</span></h2>
             </div>
             <div class="news-list">
                 <div class="news-item">
                     <time class="news-date">2025.10.10</time>
-                    <p class="news-content">新しいホームページを公開しました。</p>
+                    <p class="news-content" data-ja="新しいホームページを公開しました。" data-en="We launched our new website.">新しいホームページを公開しました。</p>
                 </div>
                 <div class="news-item">
                     <time class="news-date">2025.09.15</time>
-                    <p class="news-content">海外展開の新拠点をマレーシアに開設しました。</p>
+                    <p class="news-content" data-ja="海外展開の新拠点をマレーシアに開設しました。" data-en="We opened a new overseas base in Malaysia.">海外展開の新拠点をマレーシアに開設しました。</p>
                 </div>
                 <div class="news-item">
                     <time class="news-date">2025.08.01</time>
-                    <p class="news-content">創業100周年に向けた記念プロジェクトを始動しました。</p>
+                    <p class="news-content" data-ja="創業100周年に向けた記念プロジェクトを始動しました。" data-en="We launched a commemorative project for our 100th anniversary.">創業100周年に向けた記念プロジェクトを始動しました。</p>
                 </div>
             </div>
         </div>
@@ -242,18 +266,20 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Contact<span class="section-title-ja">お問い合わせ</span></h2>
-                <p class="section-lead">エトウへのご相談・ご質問、お見積もりのご依頼など、<br>お気軽にお問い合わせください。</p>
+                <h2 class="section-title">Contact<span class="section-title-ja" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span></h2>
+                <p class="section-lead" data-ja="エトウへのご相談・ご質問、お見積もりのご依頼など、<br>お気軽にお問い合わせください。" data-en="Please feel free to contact us for consultations, questions,<br>quotation requests, and more.">エトウへのご相談・ご質問、お見積もりのご依頼など、<br>お気軽にお問い合わせください。</p>
             </div>
             <div class="contact-content">
                 <div class="contact-method">
-                    <h3>お電話でのお問い合わせ</h3>
+                    <h3 data-ja="お電話でのお問い合わせ" data-en="Phone Inquiries">お電話でのお問い合わせ</h3>
                     <p class="contact-tel">0944-87-5888</p>
-                    <p class="contact-time">9:00 - 17:00 / 土日祝休み</p>
+                    <p class="contact-time" data-ja="9:00 - 17:00 / 土日祝休み" data-en="9:00 - 17:00 / Closed on weekends and holidays">9:00 - 17:00 / 土日祝休み</p>
                 </div>
                 <div class="contact-method">
-                    <h3>Webからのお問い合わせ</h3>
-                    <a href="#" class="btn btn-primary">お問い合わせフォーム</a>
+                    <h3 data-ja="Webからのお問い合わせ" data-en="Web Inquiries">Webからのお問い合わせ</h3>
+                    <a href="#" class="btn btn-primary" data-ja="お問い合わせフォーム" data-en="Contact Form">お問い合わせフォーム</a>
+                    <br><br>
+                    <a href="admin.html" class="btn btn-outline btn-sm">管理画面</a>
                 </div>
             </div>
         </div>
@@ -264,18 +290,18 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3>株式会社エトウ</h3>
-                    <p>〒831-0008<br>福岡県大川市大字鐘ヶ江 227-2</p>
-                    <p>TEL: 0944-87-5888 / FAX: 0944-87-1018</p>
+                    <h3 data-ja="株式会社エトウ" data-en="ETO CO., LTD.">株式会社エトウ</h3>
+                    <p data-ja="〒831-0008<br>福岡県大川市大字鐘ヶ江 227-2" data-en="227-2 Kanegae, Okawa City,<br>Fukuoka 831-0008, Japan">〒831-0008<br>福岡県大川市大字鐘ヶ江 227-2</p>
+                    <p data-ja="TEL: 0944-87-5888 / FAX: 0944-87-1018" data-en="TEL: +81-944-87-5888 / FAX: +81-944-87-1018">TEL: 0944-87-5888 / FAX: 0944-87-1018</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Links</h4>
+                    <h4 data-ja="Links" data-en="Links">Links</h4>
                     <ul>
-                        <li><a href="#top">トップ</a></li>
-                        <li><a href="#about">エトウについて</a></li>
-                        <li><a href="#business">事業内容</a></li>
-                        <li><a href="#company">会社情報</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#top" data-ja="トップ" data-en="Top">トップ</a></li>
+                        <li><a href="products/" data-ja="製品情報" data-en="Products">製品情報</a></li>
+                        <li><a href="oem/" data-ja="OEM・ODM" data-en="OEM・ODM">OEM・ODM</a></li>
+                        <li><a href="company/" data-ja="会社情報" data-en="Company">会社情報</a></li>
+                        <li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
                     </ul>
                 </div>
             </div>
