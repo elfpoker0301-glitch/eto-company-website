@@ -752,6 +752,9 @@ img {
    =================================== */
 .business-section {
     background: var(--bg-light);
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
 }
 
 .business-grid {
@@ -1206,8 +1209,16 @@ img {
    Responsive Design
    =================================== */
 
-/* Tablet and Medium Devices */
-@media (max-width: 1024px) {
+/* Large Screen Devices - Keep 4 columns */
+@media (min-width: 1200px) {
+    .business-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 0 !important;
+    }
+}
+
+/* Medium to Large Tablets */
+@media (max-width: 1199px) and (min-width: 900px) {
     .services-slider {
         margin: 0 20px;
     }
@@ -1222,7 +1233,29 @@ img {
         max-width: 400px;
     }
 
-    /* Business Section Tablet */
+    /* Business Section Large Tablet - Keep 4 columns */
+    .business-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+    }
+
+    .business-card {
+        height: 270px;
+    }
+    
+    .business-content h3 {
+        font-size: 0.95rem;
+    }
+    
+    .business-content p {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+    }
+}
+
+/* Tablet Devices */  
+@media (max-width: 768px) {
+    /* Business Section Tablet - Switch to 2 columns */
     .business-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0;
