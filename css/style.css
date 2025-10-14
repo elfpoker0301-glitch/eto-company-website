@@ -752,36 +752,39 @@ img {
    =================================== */
 .business-section {
     background: var(--bg-light);
-    padding-left: 0;
-    padding-right: 0;
-    overflow-x: hidden;
+    padding: 120px 0 0 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
 }
 
 .business-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
     gap: 0;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
+    max-width: none;
 }
 
 .business-card {
     position: relative;
     border-radius: 0;
     overflow: hidden;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
-    height: 300px;
+    height: 50vh;
+    min-height: 400px;
 }
 
 .business-card:last-child {
-    border-right: none;
+    border-bottom: none;
 }
 
 .business-card:hover {
@@ -1211,9 +1214,32 @@ img {
 
 /* Large Screen Devices - Keep 4 columns */
 @media (min-width: 1200px) {
+    .business-section {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+    }
+    
     .business-grid {
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
+
+/* Extra Large Screens and Full Screen */
+@media (min-width: 1920px) {
+    .business-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 0 !important;
+    }
+    
+    .business-card {
+        height: 350px !important;
     }
 }
 
