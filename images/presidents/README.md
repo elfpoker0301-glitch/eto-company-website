@@ -19,10 +19,10 @@
 - president-04.jpg: 4代目 山﨑 彩
 
 ## 現在の画像ファイル
-- president-04.jpg: 4代目 山﨑 彩（サンプル画像）
-- president-01.jpg: 初代 江藤 米作（未追加）
-- president-02.jpg: 2代目 江藤 展吉（未追加）
-- president-03.jpg: 3代目 江藤 義行（未追加）
+- president-01.jpg: 初代 江藤 米作（追加済み）
+- president-02.jpg: 2代目 江藤 展吉（追加済み）
+- president-03.jpg: 3代目 江藤 義行（追加済み）
+- president-04.jpg: 4代目 山﨑 彩（追加済み）
 
 ## 使用方法
 写真を追加する際は、HTMLファイルの以下の部分を更新してください：
