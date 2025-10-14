@@ -986,6 +986,255 @@ textarea {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* ===================================
+   Presidents History Styles
+   =================================== */
+.presidents-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.presidents-timeline {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.president-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.president-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+.president-item.current {
+    border-left-color: var(--accent-color);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+.president-item.current::before {
+    content: '現職';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.president-period {
+    min-width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.period-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.period-years {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    padding: 8px 16px;
+    background: var(--bg-light);
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.president-photo {
+    min-width: 120px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-light);
+    border: 2px dashed var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-placeholder:hover {
+    border-color: var(--accent-color);
+    background: rgba(var(--accent-rgb), 0.05);
+}
+
+.president-photo img,
+.president-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.president-photo img:hover,
+.president-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.president-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.president-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.president-description {
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.president-achievement {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.achievement-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: rgba(var(--primary-rgb), 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.achievement-text {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Presidents Responsive Design */
+@media (max-width: 768px) {
+    .presidents-section {
+        padding: 60px 0;
+    }
+    
+    .president-item {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+    
+    .president-period {
+        min-width: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .period-number {
+        font-size: 1.5rem;
+    }
+    
+    .period-years {
+        font-size: 0.9rem;
+    }
+    
+    .president-photo {
+        min-width: 100px;
+        width: 100px;
+        height: 100px;
+        align-self: center;
+    }
+    
+    .president-name {
+        font-size: 1.5rem;
+    }
+    
+    .president-achievement {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .president-item.current::before {
+        top: 15px;
+        right: 15px;
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .president-item {
+        padding: 20px 15px;
+    }
+    
+    .president-period {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .president-photo {
+        min-width: 80px;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .president-name {
+        font-size: 1.3rem;
+    }
+    
+    .president-description {
+        font-size: 0.9rem;
+    }
+}
+
 /* Responsive Design for History */
 @media (max-width: 768px) {
     .history-timeline::before {
@@ -1050,11 +1299,58 @@ textarea {
     .history-content {
         padding-left: 40px;
     }
+    
+    /* Presidents Large Screen */
+    .presidents-section {
+        padding: 100px 0;
+    }
+    
+    .president-item {
+        padding: 50px;
+        gap: 50px;
+    }
+    
+    .president-period {
+        min-width: 200px;
+    }
+    
+    .period-number {
+        font-size: 2rem;
+    }
+    
+    .president-photo {
+        min-width: 140px;
+        width: 140px;
+        height: 140px;
+    }
+    
+    .president-name {
+        font-size: 2rem;
+    }
 }
 
 @media (min-width: 1440px) {
     .history-section {
         padding: 100px 0;
+    }
+    
+    .presidents-section {
+        padding: 120px 0;
+    }
+    
+    .president-item {
+        padding: 60px;
+        gap: 60px;
+    }
+    
+    .president-period {
+        min-width: 220px;
+    }
+    
+    .president-photo {
+        min-width: 160px;
+        width: 160px;
+        height: 160px;
     }
 }
 
