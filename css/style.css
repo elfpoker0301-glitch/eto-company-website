@@ -492,9 +492,9 @@ img {
     background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: -webkit-crisp-edges;
-    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
+    image-rendering: -webkit-crisp-edges; /* Safari */
+    image-rendering: crisp-edges; /* Standard */
     background-color: #f8fafc;
 }
 
