@@ -456,7 +456,7 @@ img {
 
 /* 実際の画像を使用する場合の背景 */
 .slide-image .image-placeholder.has-image::before {
-    background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+    background: none !important;
 }
 
 .slide-image .image-placeholder.has-image {
@@ -480,20 +480,32 @@ img {
 }
 
 /* Featured section images */
-.service-img-100th {
-    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7)), url('../images/featured/featured-100th.png');
+.slide-image .image-placeholder.service-img-1 {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7)), url('../images/featured/featured-100th.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
-.service-img-2 {
-    background: linear-gradient(135deg, rgba(34, 139, 34, 0.7), rgba(107, 142, 35, 0.7)), url('../images/featured/featured-hinoki.jpg');
+.slide-image .image-placeholder.service-img-2 {
+    background: linear-gradient(135deg, rgba(34, 139, 34, 0.7), rgba(107, 142, 35, 0.7)), url('../images/featured/featured-hinoki.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
-.service-img-3 {
-    background: linear-gradient(135deg, rgba(101, 67, 33, 0.7), rgba(139, 90, 43, 0.7)), url('../images/featured/featured-hinoki-furniture.jpg');
+.slide-image .image-placeholder.service-img-3 {
+    background: linear-gradient(135deg, rgba(101, 67, 33, 0.7), rgba(139, 90, 43, 0.7)), url('../images/featured/featured-hinoki-furniture.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
-.service-img-4 {
-    background: linear-gradient(135deg, rgba(70, 130, 180, 0.7), rgba(100, 149, 237, 0.7)), url('../images/featured/featured-experience.jpg');
+.slide-image .image-placeholder.service-img-4 {
+    background: linear-gradient(135deg, rgba(70, 130, 180, 0.7), rgba(100, 149, 237, 0.7)), url('../images/featured/featured-experience.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 .slide-content {
