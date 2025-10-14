@@ -767,19 +767,22 @@ img {
     flex-direction: column;
     width: 100%;
     max-width: none;
+    margin: 0;
+    padding: 0;
 }
 
 .business-card {
     position: relative;
     border-radius: 0;
     overflow: hidden;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
     height: 400px;
     width: 100%;
     flex: 0 0 auto;
+    margin: 0;
 }
 
 .business-card:last-child {
@@ -1285,15 +1288,15 @@ img {
 
 /* Tablet Devices */  
 @media (max-width: 768px) {
-    /* Business Section Tablet - Switch to 2 columns */
+    /* Business Section Tablet - Keep single column */
     .business-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .business-card {
-        height: 250px;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        height: 300px;
+        border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -1654,6 +1657,11 @@ img {
 
     .contact-tel {
         font-size: 1.5rem;
+    }
+
+    /* Business Section Mobile */
+    .business-card {
+        height: 250px;
     }
 
     /* Services Slider Mobile */
