@@ -833,9 +833,21 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
     padding: 30px;
     color: white;
     z-index: 1;
+}
+
+/* 偶数番目のカード（右寄せ） */
+.business-card:nth-child(even) .business-overlay {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.business-card:nth-child(even) .business-action {
+    left: 20px;
+    right: auto;
 }
 
 .business-content h3 {
@@ -1314,6 +1326,11 @@ img {
         right: 15px;
     }
     
+    .business-card:nth-child(even) .business-action {
+        left: 15px;
+        right: auto;
+    }
+    
     .business-btn {
         padding: 10px 20px;
         font-size: 0.8rem;
@@ -1693,6 +1710,11 @@ img {
     .business-action {
         top: 10px;
         right: 10px;
+    }
+    
+    .business-card:nth-child(even) .business-action {
+        left: 10px;
+        right: auto;
     }
     
     .business-btn {
