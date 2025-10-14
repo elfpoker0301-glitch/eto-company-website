@@ -251,8 +251,7 @@ class NewsManager {
         // メインサイト用のデータとして保存
         localStorage.setItem('eto_published_news', JSON.stringify(publishedNews));
         
-        // メインサイトが開いている場合は自動更新を促す
-        console.log('メインサイトのお知らせが更新されました');
+        // メインサイトのお知らせが更新されました
     }
 
     // ユーティリティ関数

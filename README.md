@@ -17,7 +17,7 @@
 
 ## ファイル構成
 
-```
+```text
 eto-website/
 ├── index.html          # メインページ
 ├── css/
@@ -31,6 +31,7 @@ eto-website/
 
 1. `index.html` をブラウザで開く
 2. または、ローカルサーバーを起動:
+
    ```bash
    # Python 3の場合
    python -m http.server 8000
@@ -41,6 +42,7 @@ eto-website/
 ## カスタマイズ
 
 ### 色の変更
+
 `css/style.css` の `:root` セクションで色を変更できます:
 
 ```css
@@ -52,6 +54,7 @@ eto-website/
 ```
 
 ### コンテンツの編集
+
 `index.html` を直接編集してテキストや画像を変更してください。
 
 ## ブラウザサポート

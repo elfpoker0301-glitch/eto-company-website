@@ -547,8 +547,6 @@ class HeroBackgroundSlider {
                 this.images.push(imagePath);
             }
         }
-        
-        console.log(`Found ${this.images.length} hero background images`);
     }
 
     checkImageExists(imagePath) {
