@@ -480,8 +480,8 @@ img {
 }
 
 /* Featured section images */
-.service-img-1 {
-    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7)), url('../images/featured/featured-100th.jpg');
+.service-img-100th {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7)), url('../images/featured/featured-100th.png');
 }
 
 .service-img-2 {
