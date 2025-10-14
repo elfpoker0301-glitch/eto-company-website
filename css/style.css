@@ -748,7 +748,7 @@ img {
 }
 
 /* ===================================
-   Business Section
+   Business Section - 画像ベースデザイン
    =================================== */
 .business-section {
     background: var(--bg-light);
@@ -756,40 +756,148 @@ img {
 
 .business-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .business-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
 }
 
 .business-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.business-icon {
-    font-size: 3rem;
+.business-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.business-image .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d6e7f0 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.business-card:hover .business-image .image-placeholder {
+    transform: scale(1.1);
+}
+
+/* オーバーレイコンテンツ */
+.business-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    color: white;
+}
+
+.business-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Noto Serif JP', serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.business-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
 }
 
-.business-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    font-family: 'Noto Serif JP', serif;
+/* カットインボタンアニメーション */
+.business-action {
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0;
 }
 
-.business-card p {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    line-height: 1.7;
+.business-card:hover .business-action {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.business-btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(44, 95, 45, 0.4);
+    border: 2px solid transparent;
+}
+
+.business-btn:hover {
+    background: transparent;
+    border-color: white;
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* 事業画像のプレースホルダー設定 */
+.business-img-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.business-img-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.business-img-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.business-img-4 {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* 実際の画像用のクラス（画像が用意できた際に使用） */
+.business-img-1.has-image {
+    background-image: url('../images/business/business-oem.jpg');
+}
+
+.business-img-2.has-image {
+    background-image: url('../images/business/business-contract.jpg');
+}
+
+.business-img-3.has-image {
+    background-image: url('../images/business/business-design.jpg');
+}
+
+.business-img-4.has-image {
+    background-image: url('../images/business/business-quality.jpg');
 }
 
 /* ===================================
@@ -1100,6 +1208,24 @@ img {
         max-width: 400px;
     }
 
+    /* Business Section Tablet */
+    .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .business-image {
+        height: 220px;
+    }
+
+    .business-overlay {
+        padding: 25px;
+    }
+
+    .business-content p {
+        font-size: 0.85rem;
+    }
+
     .slide-image .image-placeholder {
         height: 240px;
         padding: 25px;
@@ -1267,6 +1393,33 @@ img {
 
     .business-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .business-card {
+        margin: 0 10px;
+    }
+
+    .business-image {
+        height: 200px;
+    }
+
+    .business-overlay {
+        padding: 25px;
+    }
+
+    .business-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .business-content p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .business-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 
     .strength-item {
