@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | ETO COMPANY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="株式会社エトウ" class="logo-image">
+                </a>
+            </div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" data-ja="ホーム" data-en="Home">ホーム</a></li>
+                    <li><a href="../message/" data-ja="代表挨拶" data-en="Message">代表挨拶</a></li>
+                    <li><a href="../company/" data-ja="会社情報" data-en="Company">会社情報</a></li>
+                    <li><a href="../oem/" data-ja="OEM・ODM" data-en="OEM・ODM">OEM・ODM</a></li>
+                    <li><a href="../index.html#news" data-ja="ニュース" data-en="News">ニュース</a></li>
+                    <li><a href="./index.html" class="active" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="ja">JP</button>
+                <span class="lang-separator">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title" data-ja="お問い合わせ" data-en="Contact Us">お問い合わせ</h1>
+                <p class="page-subtitle" data-ja="製品やサービスに関するご質問・ご相談をお気軽にお寄せください" data-en="Please feel free to contact us with any questions or inquiries about our products and services">製品やサービスに関するご質問・ご相談をお気軽にお寄せください</p>
+            </div>
+        </section>
+
+        <!-- Contact Info -->
+        <section class="section contact-info-section">
+            <div class="container">
+                <div class="contact-info-grid">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <div class="icon-placeholder">📞</div>
+                        </div>
+                        <h3>お電話でのお問い合わせ</h3>
+                        <p class="contact-detail">0944-87-5888</p>
+                        <p class="contact-hours">受付時間：平日 9:00〜17:00</p>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <div class="icon-placeholder">📠</div>
+                        </div>
+                        <h3>FAXでのお問い合わせ</h3>
+                        <p class="contact-detail">0944-87-1018</p>
+                        <p class="contact-hours">24時間受付</p>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <div class="icon-placeholder">📧</div>
+                        </div>
+                        <h3>メールでのお問い合わせ</h3>
+                        <p class="contact-detail">下記フォームよりお送りください</p>
+                        <p class="contact-hours">2営業日以内に回答いたします</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section contact-form-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contact Form<span class="section-title-ja">お問い合わせフォーム</span></h2>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">会社名 <span class="required">*</span></label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="department">部署名</label>
+                                <input type="text" id="department" name="department">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">お名前 <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kana">フリガナ</label>
+                                <input type="text" id="kana" name="kana">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">メールアドレス <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">電話番号</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="inquiry-type">お問い合わせ種別 <span class="required">*</span></label>
+                            <select id="inquiry-type" name="inquiry-type" required>
+                                <option value="">選択してください</option>
+                                <option value="oem">OEM・ODM について</option>
+                                <option value="product">製品について</option>
+                                <option value="quality">品質管理について</option>
+                                <option value="design">デザインについて</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="subject">件名 <span class="required">*</span></label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="8" required placeholder="お問い合わせ内容を詳しくご記入ください"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span class="checkmark"></span>
+                                <a href="#" target="_blank">プライバシーポリシー</a>に同意する <span class="required">*</span>
+                            </label>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="submit-btn">送信する</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Office Info -->
+        <section class="section office-info-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Office<span class="section-title-ja">オフィス情報</span></h2>
+                </div>
+                <div class="office-info-grid">
+                    <div class="office-info">
+                        <h3>本社・工場</h3>
+                        <div class="office-details">
+                            <p><strong>住所</strong></p>
+                            <p>〒831-0008<br>福岡県大川市大字鐘ヶ江 227-2</p>
+                            <p><strong>電話</strong></p>
+                            <p>0944-87-5888</p>
+                            <p><strong>FAX</strong></p>
+                            <p>0944-87-1018</p>
+                            <p><strong>アクセス</strong></p>
+                            <p>西鉄大牟田線 八丁牟田駅より車で約10分<br>九州自動車道 みやま柳川ICより車で約15分</p>
+                        </div>
+                    </div>
+                    <div class="office-map">
+                        <div class="map-container">
+                            <iframe
+                                class="google-map"
+                                src="https://maps.google.com/maps?q=福岡県大川市大字鐘ヶ江227-2&hl=ja&z=16&output=embed"
+                                allowfullscreen=""
+                                loading="lazy"
+                                title="株式会社エトウ 本社・工場所在地">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <img src="../images/logo.png" alt="株式会社エトウ">
+                    </div>
+                    <div class="footer-info">
+                        <p>〒831-0008 福岡県大川市大字鐘ヶ江 227-2</p>
+                        <p>TEL: 0944-87-5888 / FAX: 0944-87-1018</p>
+                    </div>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-column">
+                        <h4>会社情報</h4>
+                        <ul>
+                            <li><a href="../message/">代表挨拶</a></li>
+                            <li><a href="../company/">会社概要</a></li>
+                            <li><a href="../company/">会社沿革</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>事業内容</h4>
+                        <ul>
+                            <li><a href="../oem/">OEM家具</a></li>
+                            <li><a href="../oem/">コントラクト家具</a></li>
+                            <li><a href="../oem/">家具デザイン</a></li>
+                            <li><a href="../oem/">品質管理</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>その他</h4>
+                        <ul>
+                            <li><a href="./index.html">お問い合わせ</a></li>
+                            <li><a href="../index.html#news">お知らせ</a></li>
+                            <li><a href="#" target="_blank">Instagram</a></li>
+                            <li><a href="#" target="_blank">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ETO CO., LTD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
