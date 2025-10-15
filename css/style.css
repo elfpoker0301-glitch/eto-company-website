@@ -1326,6 +1326,31 @@ img {
     font-weight: 600 !important;
 }
 
+/* 電話番号リンクのスタイル調整 */
+a.contact-tel {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a.contact-tel:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+a.contact-detail {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+a.contact-detail:hover {
+    opacity: 0.8;
+}
+
 .contact-time {
     color: var(--text-light);
     font-size: 0.95rem;
