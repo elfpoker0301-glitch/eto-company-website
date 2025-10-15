@@ -9,17 +9,49 @@
 - 節目となる出来事の写真
 
 ## ファイル形式
-- JPG形式を推奨
-- 画像サイズ: 横1200px以上推奨
-- ファイル名: history-[年代/内容].jpg
+- **形式**: JPEG推奨 (.jpg)
+- **サイズ**: 1200×800px以上推奨 (横長)
+- **解像度**: 72-150dpi
+- **ファイルサイズ**: 1MB以下推奨
+
+## ファイル命名規則
+
+### 年代別写真
+- **大正時代 (1920-1926)**: `taisho-[内容]-[年].jpg`
+- **昭和時代 (1926-1989)**: `showa-[内容]-[年].jpg`  
+- **平成時代 (1989-2019)**: `heisei-[内容]-[年].jpg`
+- **令和時代 (2019-)**: `reiwa-[内容]-[年].jpg`
+
+### 推奨保存名例
+```
+taisho-founding-1920.jpg          # 創業時の写真
+showa-sawmill-1944.jpg            # 製材業時代
+showa-furniture-start-1987.jpg    # 家具製造開始
+heisei-expansion-1991.jpg         # 事業拡張
+heisei-global-2000.jpg           # 海外展開
+reiwa-100th-anniversary-2020.jpg  # 100周年記念
+reiwa-modern-factory-2023.jpg     # 現代の工場
+```
 
 ## 現在の画像ファイル
 
-- founding-1920.jpg: 創業当時（1920年）の写真
-- furniture-factory-1987.jpg: 家具製造業進出（1987年）の写真
-- global-expansion-2000.jpg: 海外展開開始（2000年以降）の写真
-- 100th-anniversary-2020.jpg: 100周年記念（2020年）の写真
+### 既存ファイル
+- `founding-1920.jpg`: 創業当時（1920年）の写真
+- `furniture-factory-1987.jpg`: 家具製造業進出（1987年）の写真
+- `global-expansion-2000.jpg`: 海外展開開始（2000年以降）の写真
+- `100th-anniversary-2020.jpg`: 100周年記念（2020年）の写真
+
+### 追加推奨写真
+- 製材業時代の写真 (`showa-sawmill-1940s.jpg`)
+- 工場建設・拡張の写真
+- 従業員の集合写真
+- 製品・技術の進化を示す写真
+- 海外拠点の写真
 
 ## 使用ページ
 
-- /company/index.html の会社沿革セクション
+- `/company/index.html` の会社沿革セクション
+- 年代別タイムライン表示
+
+## 更新日
+2025年10月15日 - ファイル命名規則と推奨写真を追加
