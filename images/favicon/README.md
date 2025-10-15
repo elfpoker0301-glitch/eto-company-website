@@ -24,31 +24,36 @@
 ## ファイル名の推奨事項
 
 ### 基本的なファビコン
+
 - `favicon.ico` - ルートディレクトリ用（16x16, 32x32のマルチサイズ）
 - `favicon.svg` - モダンブラウザ用ベクター画像
 
 ### サイズ別PNG画像
+
 - `favicon-16x16.png` - 16x16フォルダ用
 - `favicon-32x32.png` - 32x32フォルダ用
 - `favicon-48x48.png` - 32x32フォルダ用（高解像度）
 
 ### Apple/iOS用
+
 - `apple-touch-icon.png` - 180x180px（apple-touchフォルダ用）
 - `apple-touch-icon-120x120.png` - iPhone用
 - `apple-touch-icon-152x152.png` - iPad用
 - `apple-touch-icon-167x167.png` - iPad Pro用
 
 ### Android/PWA用
+
 - `android-chrome-192x192.png` - Android標準
 - `android-chrome-512x512.png` - 高解像度Android用
 - `maskable-icon-192x192.png` - マスカブルアイコン用
 
 ### Windows用
+
 - `mstile-150x150.png` - Windows 10 タイル用
 
 ## 保存場所と命名例
 
-```
+```text
 images/favicon/
 ├── favicon.ico                    # ルート用
 ├── favicon.svg                    # ベクター版

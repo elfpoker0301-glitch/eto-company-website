@@ -1130,9 +1130,10 @@ img {
     opacity: 0.3;
     z-index: 0;
     pointer-events: none;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    image-rendering: pixelated;
+    image-rendering: -webkit-optimize-contrast; /* Edge 79+ */
+    image-rendering: -webkit-crisp-edges; /* Safari */
+    image-rendering: crisp-edges; /* Standard */
+    image-rendering: pixelated; /* Fallback */
 }
 
 .philosophy-section .container {
@@ -2446,7 +2447,7 @@ a.contact-detail:hover {
         flex-direction: column;
         padding: 30px 20px;
         gap: 25px;
-        min-height: auto;
+        min-height: 0;
         text-align: center;
     }
 

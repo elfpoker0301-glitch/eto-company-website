@@ -114,7 +114,7 @@ HTMLでクラス名に`has-image`を追加：
 
 ## 📍 保存先
 
-```
+```text
 /Users/utsuno/eto-website/images/business/
 ```
 
