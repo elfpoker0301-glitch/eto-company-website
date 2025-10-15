@@ -3,6 +3,117 @@
    =================================== */
 
 /* ===================================
+   Privacy Policy Section
+   =================================== */
+.privacy-section {
+    background: var(--bg-light);
+    padding: 80px 0;
+}
+
+.privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.privacy-item {
+    margin-bottom: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.privacy-title {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.privacy-text p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.privacy-text ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.privacy-text li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.privacy-contact {
+    background: var(--bg-light);
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-info {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.privacy-date {
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+    .privacy-date p {
+        margin-bottom: 5px;
+    }
+
+    /* Mobile Responsive for Privacy Policy */
+    @media (max-width: 768px) {
+        .privacy-section {
+            padding: 60px 0;
+        }
+
+        .privacy-item {
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .privacy-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .privacy-text p,
+        .privacy-text li {
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            padding: 15px;
+        }
+    }/* ===================================
    Contact Page Styles
    =================================== */
 .contact-info-section {

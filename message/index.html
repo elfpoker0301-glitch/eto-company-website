@@ -46,6 +46,15 @@
         </div>
     </header>
 
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../" data-ja="ホーム" data-en="Home">ホーム</a>
+            <span>›</span>
+            <span data-ja="代表挨拶" data-en="Message">代表挨拶</span>
+        </div>
+    </div>
+
     <main class="main-content">
         <!-- Page Header -->
         <section class="page-header">
@@ -90,49 +99,61 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-main">
-                    <div class="footer-logo">
-                        <img src="../images/logo.png" alt="株式会社エトウ">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/footer/footer-logo.png" alt="エトウ" class="footer-logo">
+                        <h3 class="footer-title" data-ja="株式会社エトウ" data-en="ETO CO., LTD.">株式会社エトウ</h3>
                     </div>
                     <div class="footer-info">
-                        <p>〒831-0008 福岡県大川市大字鐘ヶ江 227-2</p>
-                        <p>TEL: 0944-87-5888 / FAX: 0944-87-1018</p>
+                        <p class="footer-address" data-ja="〒831-0008 福岡県大川市大字鐘ヶ江 227-2" data-en="227-2 Kanegae, Okawa, Fukuoka 831-0008, Japan">〒831-0008 福岡県大川市大字鐘ヶ江 227-2</p>
+                        <p class="footer-contact">TEL: 0944-87-5888 / FAX: 0944-87-1018</p>
+                        <p class="footer-description" data-ja="高品質な家具の製造・販売を通じて、豊かな生活空間を提案します" data-en="We propose enriching living spaces through manufacturing and sales of high-quality furniture">高品質な家具の製造・販売を通じて、豊かな生活空間を提案します</p>
                     </div>
                 </div>
-
-                <div class="footer-nav">
-                    <div class="footer-column">
-                        <h4>会社情報</h4>
-                        <ul>
-                            <li><a href="./index.html">代表挨拶</a></li>
-                            <li><a href="../company/">会社概要</a></li>
-                            <li><a href="../company/#history">会社沿革</a></li>
-                            <li><a href="../company/#presidents">歴代代表者</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>事業内容</h4>
-                        <ul>
-                            <li><a href="https://www.eto-web.com/landing-oem.eto-web.com/" class="external-link" data-ja-url="https://www.eto-web.com/landing-oem.eto-web.com/" data-en-url="https://en-oem.eto-web.com/" target="_blank" rel="noopener">OEM家具</a></li>
-                            <li><a href="https://www.eto-web.com/landing-oem.eto-web.com/" class="external-link" data-ja-url="https://www.eto-web.com/landing-oem.eto-web.com/" data-en-url="https://en-oem.eto-web.com/" target="_blank" rel="noopener">コントラクト家具</a></li>
-                            <li><a href="https://www.eto-web.com/landing-oem.eto-web.com/" class="external-link" data-ja-url="https://www.eto-web.com/landing-oem.eto-web.com/" data-en-url="https://en-oem.eto-web.com/" target="_blank" rel="noopener">家具デザイン</a></li>
-                            <li><a href="https://www.eto-web.com/landing-oem.eto-web.com/" class="external-link" data-ja-url="https://www.eto-web.com/landing-oem.eto-web.com/" data-en-url="https://en-oem.eto-web.com/" target="_blank" rel="noopener">品質管理</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>その他</h4>
-                        <ul>
-                            <li><a href="../contact/">お問い合わせ</a></li>
-                            <li><a href="../index.html#news">お知らせ</a></li>
-                            <li><a href="https://www.instagram.com/eto_fukuoka_okawa/" target="_blank" rel="noopener">Instagram</a></li>
-                            <li><a href="https://www.facebook.com/EtoCoLtd/" target="_blank" rel="noopener">Facebook</a></li>
-                        </ul>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-ja="会社情報" data-en="Company">会社情報</h4>
+                    <ul class="footer-links">
+                        <li><a href="../company/" data-ja="会社概要" data-en="About Us">会社概要</a></li>
+                        <li><a href="./index.html" data-ja="代表挨拶" data-en="Message">代表挨拶</a></li>
+                        <li><a href="../company/#history" data-ja="会社沿革" data-en="History">会社沿革</a></li>
+                        <li><a href="../company/#presidents" data-ja="歴代代表者" data-en="Presidents">歴代代表者</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-ja="事業案内" data-en="Business">事業案内</h4>
+                    <ul class="footer-links">
+                        <li><a href="../products/" data-ja="製品情報" data-en="Products">製品情報</a></li>
+                        <li><a href="https://www.eto-web.com/landing-oem.eto-web.com/" class="external-link" data-ja="OEM家具" data-en="OEM Furniture" data-ja-url="https://www.eto-web.com/landing-oem.eto-web.com/" data-en-url="https://en-oem.eto-web.com/" target="_blank" rel="noopener">OEM家具</a></li>
+                        <li><a href="../index.html#business" data-ja="コントラクト家具" data-en="Contract Furniture">コントラクト家具</a></li>
+                        <li><a href="../index.html#business" data-ja="品質管理" data-en="Quality Control">品質管理</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</h4>
+                    <div class="footer-contact">
+                        <p class="contact-tel">0944-87-5888</p>
+                        <p class="contact-hours" data-ja="平日 9:00-17:00" data-en="Weekdays 9:00-17:00">平日 9:00-17:00</p>
+                        <a href="../contact/" class="contact-btn" data-ja="お問い合わせフォーム" data-en="Contact Form">お問い合わせフォーム</a>
                     </div>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 ETO CO., LTD. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/eto_fukuoka_okawa/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img src="../images/social/instagram-icon.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.facebook.com/EtoCoLtd/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+                        <img src="../images/social/facebook-icon.png" alt="Facebook" class="social-icon">
+                    </a>
+                </div>
+                <div class="footer-legal">
+                    <a href="../privacy/" class="legal-link" data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</a>
+                </div>
+                <p class="footer-copyright">&copy; 2025 ETO CO., LTD. All rights reserved.</p>
             </div>
         </div>
     </footer>
