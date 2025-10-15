@@ -997,11 +997,11 @@ img {
     display: inline-block;
     background: rgba(255, 255, 255, 0.2);
     color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 16px 32px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -1800,8 +1800,8 @@ a.contact-detail:hover {
     }
     
     .business-btn {
-        padding: 10px 20px;
-        font-size: 0.8rem;
+        padding: 14px 28px;
+        font-size: 0.9rem;
         background: rgba(255, 255, 255, 0.9);
         color: var(--primary-color);
         border: 2px solid rgba(255, 255, 255, 0.9);
@@ -2411,8 +2411,8 @@ a.contact-detail:hover {
     }
 
     .business-btn {
-        padding: 8px 16px;
-        font-size: 0.8rem;
+        padding: 12px 24px;
+        font-size: 0.85rem;
         background: rgba(255, 255, 255, 0.9);
         color: var(--primary-color);
         border: 2px solid rgba(255, 255, 255, 0.9);
