@@ -283,6 +283,48 @@ class LanguageSwitcher {
         if (scrollText) {
             scrollText.textContent = lang === 'ja' ? 'SCROLL' : 'SCROLL';
         }
+
+        // フォーム要素のplaceholder更新
+        const placeholderElements = document.querySelectorAll('[data-ja-placeholder][data-en-placeholder]');
+        placeholderElements.forEach(element => {
+            const placeholder = lang === 'ja' ? element.dataset.jaPlaceholder : element.dataset.enPlaceholder;
+            if (placeholder) {
+                element.placeholder = placeholder;
+            }
+        });
+
+        // Select要素のoption更新
+        const selectOptions = document.querySelectorAll('select option[data-ja][data-en]');
+        selectOptions.forEach(option => {
+            const text = lang === 'ja' ? option.dataset.ja : option.dataset.en;
+            if (text) {
+                option.textContent = text;
+            }
+        });
+
+        // Label要素の更新（requiredマークを含む）
+        const labelElements = document.querySelectorAll('label[data-ja][data-en]');
+        labelElements.forEach(label => {
+            const text = lang === 'ja' ? label.dataset.ja : label.dataset.en;
+            if (text) {
+                // requiredマークを保持したままテキストを更新
+                const requiredSpan = label.querySelector('.required');
+                if (requiredSpan) {
+                    label.innerHTML = text + ' ' + requiredSpan.outerHTML;
+                } else {
+                    label.textContent = text;
+                }
+            }
+        });
+
+        // オフィス情報の住所（改行を含む）
+        const officeAddress = document.querySelector('.office-details p[data-ja][data-en]');
+        if (officeAddress) {
+            const text = lang === 'ja' ? officeAddress.dataset.ja : officeAddress.dataset.en;
+            if (text) {
+                officeAddress.innerHTML = text;
+            }
+        }
     }
 }
 

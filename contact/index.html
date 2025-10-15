@@ -72,25 +72,25 @@
                         <div class="contact-icon">
                             <div class="icon-placeholder">📞</div>
                         </div>
-                        <h3>お電話でのお問い合わせ</h3>
+                        <h3 data-ja="お電話でのお問い合わせ" data-en="Phone Inquiry">お電話でのお問い合わせ</h3>
                         <a href="tel:0944-87-5888" class="contact-detail">0944-87-5888</a>
-                        <p class="contact-hours">受付時間：平日 9:00〜17:00</p>
+                        <p class="contact-hours" data-ja="受付時間：平日 9:00〜17:00" data-en="Business Hours: Weekdays 9:00-17:00">受付時間：平日 9:00〜17:00</p>
                     </div>
                     <div class="contact-method">
                         <div class="contact-icon">
                             <div class="icon-placeholder">📠</div>
                         </div>
-                        <h3>FAXでのお問い合わせ</h3>
+                        <h3 data-ja="FAXでのお問い合わせ" data-en="FAX Inquiry">FAXでのお問い合わせ</h3>
                         <p class="contact-detail">0944-87-1018</p>
-                        <p class="contact-hours">24時間受付</p>
+                        <p class="contact-hours" data-ja="24時間受付" data-en="24 Hours Available">24時間受付</p>
                     </div>
                     <div class="contact-method">
                         <div class="contact-icon">
                             <div class="icon-placeholder">📧</div>
                         </div>
-                        <h3>メールでのお問い合わせ</h3>
-                        <p class="contact-detail">下記フォームよりお送りください</p>
-                        <p class="contact-hours">2営業日以内に回答いたします</p>
+                        <h3 data-ja="メールでのお問い合わせ" data-en="Email Inquiry">メールでのお問い合わせ</h3>
+                        <p class="contact-detail" data-ja="下記フォームよりお送りください" data-en="Please use the form below">下記フォームよりお送りください</p>
+                        <p class="contact-hours" data-ja="2営業日以内に回答いたします" data-en="We will respond within 2 business days">2営業日以内に回答いたします</p>
                     </div>
                 </div>
             </div>
@@ -106,52 +106,52 @@
                     <form class="contact-form" id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="company">会社名 <span class="required">*</span></label>
+                                <label for="company" data-ja="会社名" data-en="Company Name">会社名 <span class="required">*</span></label>
                                 <input type="text" id="company" name="company" required>
                             </div>
                             <div class="form-group">
-                                <label for="department">部署名</label>
+                                <label for="department" data-ja="部署名" data-en="Department">部署名</label>
                                 <input type="text" id="department" name="department">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">お名前 <span class="required">*</span></label>
+                                <label for="name" data-ja="お名前" data-en="Name">お名前 <span class="required">*</span></label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="kana">フリガナ</label>
+                                <label for="kana" data-ja="フリガナ" data-en="Name (Kana)">フリガナ</label>
                                 <input type="text" id="kana" name="kana">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">メールアドレス <span class="required">*</span></label>
+                                <label for="email" data-ja="メールアドレス" data-en="Email Address">メールアドレス <span class="required">*</span></label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">電話番号</label>
+                                <label for="phone" data-ja="電話番号" data-en="Phone Number">電話番号</label>
                                 <input type="tel" id="phone" name="phone">
                             </div>
                         </div>
                         <div class="form-group full-width">
-                            <label for="inquiry-type">お問い合わせ種別 <span class="required">*</span></label>
+                            <label for="inquiry-type" data-ja="お問い合わせ種別" data-en="Inquiry Type">お問い合わせ種別 <span class="required">*</span></label>
                             <select id="inquiry-type" name="inquiry-type" required>
-                                <option value="">選択してください</option>
-                                <option value="oem">OEM・ODM について</option>
-                                <option value="product">製品について</option>
-                                <option value="quality">品質管理について</option>
-                                <option value="design">デザインについて</option>
-                                <option value="other">その他</option>
+                                <option value="" data-ja="選択してください" data-en="Please select">選択してください</option>
+                                <option value="oem" data-ja="OEM・ODM について" data-en="About OEM・ODM">OEM・ODM について</option>
+                                <option value="product" data-ja="製品について" data-en="About Products">製品について</option>
+                                <option value="quality" data-ja="品質管理について" data-en="About Quality Control">品質管理について</option>
+                                <option value="design" data-ja="デザインについて" data-en="About Design">デザインについて</option>
+                                <option value="other" data-ja="その他" data-en="Other">その他</option>
                             </select>
                         </div>
                         <div class="form-group full-width">
-                            <label for="subject">件名 <span class="required">*</span></label>
+                            <label for="subject" data-ja="件名" data-en="Subject">件名 <span class="required">*</span></label>
                             <input type="text" id="subject" name="subject" required>
                         </div>
                         <div class="form-group full-width">
-                            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="8" required placeholder="お問い合わせ内容を詳しくご記入ください"></textarea>
+                            <label for="message" data-ja="お問い合わせ内容" data-en="Message">お問い合わせ内容 <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="8" required placeholder="お問い合わせ内容を詳しくご記入ください" data-ja-placeholder="お問い合わせ内容を詳しくご記入ください" data-en-placeholder="Please describe your inquiry in detail"></textarea>
                         </div>
                         <div class="form-group full-width">
                             <label class="checkbox-label">
@@ -161,7 +161,7 @@
                             </label>
                         </div>
                         <div class="form-submit">
-                            <button type="submit" class="submit-btn">送信する</button>
+                            <button type="submit" class="submit-btn" data-ja="送信する" data-en="Send Message">送信する</button>
                         </div>
                     </form>
                 </div>
@@ -176,16 +176,16 @@
                 </div>
                 <div class="office-info-grid">
                     <div class="office-info">
-                        <h3>本社・工場</h3>
+                        <h3 data-ja="本社・工場" data-en="Head Office & Factory">本社・工場</h3>
                         <div class="office-details">
-                            <p><strong>住所</strong></p>
-                            <p>〒831-0008<br>福岡県大川市大字鐘ヶ江 227-2</p>
-                            <p><strong>電話</strong></p>
+                            <p><strong data-ja="住所" data-en="Address">住所</strong></p>
+                            <p data-ja="〒831-0008<br>福岡県大川市大字鐘ヶ江 227-2" data-en="227-2 Kanegae, Okawa City<br>Fukuoka 831-0008, Japan">〒831-0008<br>福岡県大川市大字鐘ヶ江 227-2</p>
+                            <p><strong data-ja="電話" data-en="Phone">電話</strong></p>
                             <a href="tel:0944-87-5888">0944-87-5888</a>
                             <p><strong>FAX</strong></p>
                             <p>0944-87-1018</p>
-                            <p><strong>アクセス</strong></p>
-                            <p>西鉄大牟田線 八丁牟田駅より車で約10分<br>九州自動車道 みやま柳川ICより車で約15分</p>
+                            <p><strong data-ja="アクセス" data-en="Access">アクセス</strong></p>
+                            <p data-ja="西鉄大牟田線 八丁牟田駅より車で約10分<br>九州自動車道 みやま柳川ICより車で約15分" data-en="10 minutes by car from Hatchomuta Station (Nishitetsu Omuta Line)<br>15 minutes by car from Miyama Yanagawa IC (Kyushu Expressway)">西鉄大牟田線 八丁牟田駅より車で約10分<br>九州自動車道 みやま柳川ICより車で約15分</p>
                         </div>
                     </div>
                     <div class="office-map">
