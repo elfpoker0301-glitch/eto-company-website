@@ -332,8 +332,8 @@ textarea {
 
 .message-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 80px;
     align-items: start;
 }
 
@@ -372,19 +372,27 @@ textarea {
     font-family: 'Noto Serif JP', serif;
 }
 
+.message-image {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 .message-image .ceo-image {
     width: 100%;
-    height: 400px;
-    border-radius: 10px;
+    height: 500px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
 .president-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     transition: transform 0.3s ease;
 }
 
@@ -402,12 +410,38 @@ textarea {
         font-size: 2rem;
     }
     
+    .message-image {
+        order: -1;
+    }
+    
     .message-image .ceo-image {
-        height: 300px;
+        max-width: 280px;
+        height: 400px;
+        margin: 0 auto;
     }
     
     .president-photo:hover {
         transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-content {
+        gap: 30px;
+    }
+    
+    .message-image .ceo-image {
+        max-width: 250px;
+        height: 350px;
+    }
+    
+    .message-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .message-text p {
+        font-size: 1rem;
+        line-height: 1.7;
     }
 }
 
