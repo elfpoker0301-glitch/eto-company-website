@@ -389,7 +389,7 @@ textarea {
     background: #f0f0f0;
 }
 
-.president-photo {
+.ceo-photo {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -401,7 +401,7 @@ textarea {
     left: 0 !important;
 }
 
-.president-photo:hover {
+.ceo-photo:hover {
     transform: scale(1.05);
 }
 
@@ -426,7 +426,7 @@ textarea {
         margin: 0 auto;
     }
     
-    .president-photo:hover {
+    .ceo-photo:hover {
         transform: none;
     }
 }
@@ -1132,7 +1132,7 @@ textarea {
     white-space: nowrap;
 }
 
-.president-photo {
+.presidents-section .president-photo {
     min-width: 120px;
     width: 120px;
     height: 120px;
@@ -1163,8 +1163,8 @@ textarea {
     background: rgba(var(--accent-rgb), 0.05);
 }
 
-.president-photo img,
-.president-image {
+.presidents-section .president-photo img,
+.presidents-section .president-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1173,8 +1173,8 @@ textarea {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-.president-photo img:hover,
-.president-image:hover {
+.presidents-section .president-photo img:hover,
+.presidents-section .president-image:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
