@@ -869,7 +869,13 @@ img {
 }
 
 .business-section .section-title::before {
-    background: linear-gradient(90deg, var(--primary-color), rgba(255, 255, 255, 0.3));
+    content: "▪️▪️▪️▪️";
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2rem;
+    background: none;
 }
 
 .business-grid {
