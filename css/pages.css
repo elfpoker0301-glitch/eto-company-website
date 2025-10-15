@@ -375,13 +375,21 @@ textarea {
 .message-image .ceo-image {
     width: 100%;
     height: 400px;
-    background: var(--bg-light);
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-size: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.president-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.president-photo:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -396,6 +404,10 @@ textarea {
     
     .message-image .ceo-image {
         height: 300px;
+    }
+    
+    .president-photo:hover {
+        transform: none;
     }
 }
 
