@@ -236,9 +236,74 @@ input:focus, select:focus, textarea:focus {
     border-color: var(--accent-color);
 }
 
+input.error, select.error, textarea.error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
 textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+.field-error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.field-error::before {
+    content: "⚠";
+    margin-right: 0.5rem;
+}
+
+/* フォームメッセージスタイル */
+.form-message {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-message.success {
+    background: #d4f6d4;
+    color: #2d5016;
+    border: 1px solid #9fdf9f;
+}
+
+.form-message.success::before {
+    content: "✓";
+    font-weight: bold;
+    color: #2d5016;
+}
+
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.form-message.error::before {
+    content: "⚠";
+    font-weight: bold;
+    color: #721c24;
 }
 
 .checkbox-label {

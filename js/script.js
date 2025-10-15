@@ -611,9 +611,238 @@ class HeroBackgroundSlider {
     }
 }
 
+// ===================================
+// Contact Form 機能
+// ===================================
+class ContactForm {
+    constructor() {
+        this.form = document.getElementById('contactForm');
+        this.init();
+    }
+
+    init() {
+        if (!this.form) return;
+        
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleSubmit();
+        });
+
+        // リアルタイムバリデーション
+        const requiredFields = this.form.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+            field.addEventListener('blur', () => {
+                this.validateField(field);
+            });
+            
+            field.addEventListener('input', () => {
+                if (field.classList.contains('error')) {
+                    this.validateField(field);
+                }
+            });
+        });
+    }
+
+    validateField(field) {
+        const value = field.value.trim();
+        let isValid = true;
+        let message = '';
+
+        // 必須チェック
+        if (field.hasAttribute('required') && !value) {
+            isValid = false;
+            message = 'この項目は必須です';
+        }
+
+        // メールアドレスのフォーマットチェック
+        if (field.type === 'email' && value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                isValid = false;
+                message = '正しいメールアドレスを入力してください';
+            }
+        }
+
+        // 電話番号のフォーマットチェック（任意フィールド）
+        if (field.type === 'tel' && value) {
+            const phoneRegex = /^[\d\-\+\(\)\s]+$/;
+            if (!phoneRegex.test(value)) {
+                isValid = false;
+                message = '正しい電話番号を入力してください';
+            }
+        }
+
+        this.showFieldError(field, isValid, message);
+        return isValid;
+    }
+
+    showFieldError(field, isValid, message) {
+        // 既存のエラーメッセージを削除
+        const existingError = field.parentNode.querySelector('.field-error');
+        if (existingError) {
+            existingError.remove();
+        }
+
+        if (isValid) {
+            field.classList.remove('error');
+        } else {
+            field.classList.add('error');
+            
+            const errorElement = document.createElement('div');
+            errorElement.className = 'field-error';
+            errorElement.textContent = message;
+            field.parentNode.appendChild(errorElement);
+        }
+    }
+
+    validateForm() {
+        const requiredFields = this.form.querySelectorAll('[required]');
+        let isFormValid = true;
+
+        requiredFields.forEach(field => {
+            const fieldValid = this.validateField(field);
+            if (!fieldValid) {
+                isFormValid = false;
+            }
+        });
+
+        return isFormValid;
+    }
+
+    async handleSubmit() {
+        if (!this.validateForm()) {
+            this.showMessage('入力内容をご確認ください', 'error');
+            return;
+        }
+
+        const formData = this.getFormData();
+        const submitBtn = this.form.querySelector('.submit-btn');
+        
+        // 送信中の状態にする
+        submitBtn.disabled = true;
+        submitBtn.textContent = '送信中...';
+
+        try {
+            // メール送信処理
+            await this.sendEmail(formData);
+            this.showMessage('お問い合わせを送信しました。2営業日以内に回答いたします。', 'success');
+            this.form.reset();
+            
+        } catch (error) {
+            console.error('送信エラー:', error);
+            this.showMessage('送信に失敗しました。時間をおいて再度お試しください。', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '送信する';
+        }
+    }
+
+    getFormData() {
+        const formData = new FormData(this.form);
+        const data = {};
+        
+        for (let [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+        
+        return data;
+    }
+
+    async sendEmail(formData) {
+        // メール送信のための情報を準備
+        const emailData = {
+            to: 'contact@eto-web.com',
+            subject: `【お問い合わせ】${formData.subject}`,
+            body: this.formatEmailBody(formData),
+            replyTo: formData.email
+        };
+
+        // Netlify Forms または formspree.io などのサービスを利用
+        // ここではmailto:を使用したフォールバック
+        this.openMailClient(emailData);
+    }
+
+    formatEmailBody(data) {
+        return `
+お問い合わせフォームからメッセージが送信されました。
+
+■ お問い合わせ内容
+会社名: ${data.company || ''}
+部署名: ${data.department || ''}
+お名前: ${data.name || ''}
+フリガナ: ${data.kana || ''}
+メールアドレス: ${data.email || ''}
+電話番号: ${data.phone || ''}
+お問い合わせ種別: ${this.getInquiryTypeText(data['inquiry-type'])}
+件名: ${data.subject || ''}
+
+お問い合わせ内容:
+${data.message || ''}
+
+---
+送信日時: ${new Date().toLocaleString('ja-JP')}
+送信者IP: (自動取得)
+        `.trim();
+    }
+
+    getInquiryTypeText(value) {
+        const types = {
+            'oem': 'OEM・ODM について',
+            'product': '製品について',
+            'quality': '品質管理について',
+            'design': 'デザインについて',
+            'other': 'その他'
+        };
+        return types[value] || value;
+    }
+
+    openMailClient(emailData) {
+        // メールクライアントを開く（フォールバック）
+        const mailtoUrl = `mailto:${emailData.to}?subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(emailData.body)}`;
+        
+        // 新しいウィンドウでメールクライアントを開く
+        const mailWindow = window.open(mailtoUrl);
+        
+        // 一定時間後にウィンドウを閉じる（メールクライアントが開いた場合）
+        setTimeout(() => {
+            if (mailWindow) {
+                mailWindow.close();
+            }
+        }, 1000);
+    }
+
+    showMessage(message, type) {
+        // 既存のメッセージを削除
+        const existingMessage = document.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message ${type}`;
+        messageElement.textContent = message;
+        
+        // フォームの上に挿入
+        this.form.parentNode.insertBefore(messageElement, this.form);
+        
+        // 5秒後に自動で消す
+        setTimeout(() => {
+            messageElement.remove();
+        }, 5000);
+        
+        // メッセージの位置までスクロール
+        messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
 // スライダーを初期化
 document.addEventListener('DOMContentLoaded', () => {
     new ServicesSlider();
     new HeroBackgroundSlider();
     new LanguageSwitcher();
+    new ContactForm();
 });
