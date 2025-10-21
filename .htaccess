@@ -1,0 +1,33 @@
+# セキュリティヘッダー
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+
+# HTTPS強制リダイレクト
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ディレクトリリスティング無効化
+Options -Indexes
+
+# 機密ファイルへのアクセス拒否
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# 管理ページへのアクセス制限（必要に応じて）
+<Location "/admin.html">
+    AuthType Basic
+    AuthName "管理者エリア"
+    AuthUserFile /path/to/.htpasswd
+    Require valid-user
+</Location>

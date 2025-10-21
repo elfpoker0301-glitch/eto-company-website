@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /admin.html
+Disallow: /backup/
+Disallow: /.htaccess
+Disallow: /.htpasswd
+Disallow: /private/
+
+# 特定の検索エンジンのみ許可する場合
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# サイトマップの場所（独自ドメイン設定後に更新）
+Sitemap: https://yourdomain.com/sitemap.xml
